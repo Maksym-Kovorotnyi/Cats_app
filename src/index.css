@@ -1,0 +1,51 @@
+body {
+  height: 100%;
+  font-family: 'Jost',
+    sans-serif;
+  background: #F8F8F7;
+  padding-left: 147px;
+  padding-right: 30px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+
+}
+
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+a {
+  text-decoration: none;
+  margin: 0;
+  font-style: normal;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-size: inherit;
+}
+
+ul,
+li {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+img {
+  display: block;
+}
+
+p {
+  padding: 0;
+}
+
+button {
+  cursor: pointer;
+}

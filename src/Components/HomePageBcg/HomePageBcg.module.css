@@ -1,0 +1,21 @@
+.bcgImg {
+    position: relative;
+    width: 680px;
+    height: 840px;
+    border-radius: 20px;
+    background-color: #FBE0DC;
+
+}
+
+.bcgImg::before {
+    content: "";
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    width: 775px;
+    height: 900px;
+    background-image: url("../../assets/images/HomeBcg@2x.avif");
+    background-size: cover;
+
+}
