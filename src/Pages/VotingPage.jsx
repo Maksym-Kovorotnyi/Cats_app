@@ -1,3 +1,8 @@
+import { ReactComponent as SmileIcon } from "../assets/images/voting/smile.svg";
+import { ReactComponent as SadIcon } from "../assets/images/voting/sad.svg";
+import { ReactComponent as HeartIcon } from "../assets/images/voting/heart.svg";
+import { ReactComponent as FavoritesGroup } from "../assets/images/voting/favoritesGroup.svg";
+
 function VotingPage() {
   return (
     <div>
@@ -5,6 +10,29 @@ function VotingPage() {
         <input type="text" />
         <button type="submit"></button>
       </form>
+      <div>
+        <SmileIcon />
+      </div>
+      <div>
+        <HeartIcon />
+      </div>
+      <div>
+        <SadIcon />
+      </div>
+      <button type="button"></button>
+      <h1>VOTING</h1>
+      <div>
+        <img src="#" alt="some cat picture" />
+        <FavoritesGroup />
+        <ul>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </div>
+      <ul>
+        <li></li>
+      </ul>
     </div>
   );
 }

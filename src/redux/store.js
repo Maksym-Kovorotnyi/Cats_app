@@ -1,31 +1,35 @@
-// import { configureStore } from "@reduxjs/toolkit";
-// import {
-//   persistStore,
-//   persistReducer,
-//   FLUSH,
-//   REHYDRATE,
-//   PAUSE,
-//   PERSIST,
-//   PURGE,
-//   REGISTER,
-// } from "redux-persist";
-// // import { walletReducer } from "./wallet/walletSlice";
-// import storage from "redux-persist/lib/storage";
+import { configureStore } from "@reduxjs/toolkit";
+import {
+  persistStore,
+  persistReducer,
+  FLUSH,
+  REHYDRATE,
+  PAUSE,
+  PERSIST,
+  PURGE,
+  REGISTER,
+} from "redux-persist";
+import { votingReducer } from "./voting/votingSlice";
+import storage from "redux-persist/lib/storage";
 
-// const persistConfig = {
-//   key: "cats",
-//   storage,
-//   whitelist: ["likes", "favorites", "deslikes"],
-// };
+const votingPersistConfig = {
+  key: "voting",
+  storage,
+  whitelist: ["like", "dislike", "favorites"],
+};
+const votingPersitedReducer = persistReducer(
+  votingPersistConfig,
+  votingReducer
+);
 
-// export const store = configureStore({
-//   reducer: persistReducer(persistConfig, "someReducer"),
-//   middleware: (getDefaultMiddleware) =>
-//     getDefaultMiddleware({
-//       serializableCheck: {
-//         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
-//       },
-//     }),
-// });
+export const store = configureStore({
+  reducer: votingPersitedReducer,
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({
+      serializableCheck: {
+        ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+      },
+    }),
+});
 
-// export const persistor = persistStore(store);
+export const persistor = persistStore(store);
