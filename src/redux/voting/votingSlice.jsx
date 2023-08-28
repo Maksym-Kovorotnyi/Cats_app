@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import {} from "./planningOperations";
+import { getImages } from "./votingOperations";
 
 const votingInitialState = {
   likes: [],
@@ -16,13 +16,9 @@ const votingSlice = createSlice({
     },
   },
   extraReducers: (builder) => {
-    // builder.addCase(addTrainingConfig.fulfilled, (state, { payload }) => {
-    //   state.startDate = payload.startDate;
-    //   state.endDate = payload.endDate;
-    //   state.stats = payload.stats;
-    // });
+    builder.addCase(getImages.fulfilled, () => {});
   },
 });
 
-export const votingReduser = votingSlice.reducer;
+export const votingReducer = votingSlice.reducer;
 export const { addToLikes } = votingSlice.actions;
