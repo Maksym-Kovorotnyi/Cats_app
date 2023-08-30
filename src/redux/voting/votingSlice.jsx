@@ -1,7 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { getImages } from "./votingOperations";
+import { getImages, getImgByBreed } from "./votingOperations";
 
 const votingInitialState = {
+  image: [],
   likes: [],
   favorite: [],
   dislakes: [],
@@ -16,7 +17,12 @@ const votingSlice = createSlice({
     },
   },
   extraReducers: (builder) => {
-    builder.addCase(getImages.fulfilled, () => {});
+    builder.addCase(getImages.fulfilled, (state, { payload }) => {
+      state.image = payload;
+    });
+    builder.addCase(getImgByBreed.fulfilled, (state, { payload }) => {
+      state.image = payload;
+    });
   },
 });
 

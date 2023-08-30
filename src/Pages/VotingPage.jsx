@@ -3,8 +3,15 @@ import { ReactComponent as SadIcon } from "../assets/images/voting/sad.svg";
 import { ReactComponent as HeartIcon } from "../assets/images/voting/heart.svg";
 import { ReactComponent as FavoritesGroup } from "../assets/images/voting/favoritesGroup.svg";
 import VotingSearchForm from "../Components/VotingSearchForm/VotingSearchForm";
+import { useDispatch } from "react-redux";
+import { useEffect } from "react";
+import { getImages } from "../redux/voting/votingOperations";
 
 function VotingPage() {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getImages());
+  }, [dispatch]);
   return (
     <div>
       <VotingSearchForm />
